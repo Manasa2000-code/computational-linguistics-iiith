@@ -1,0 +1,17 @@
+Functionality 1:
+It is a website to form a sentence.
+It can be either declarative or interrogative.
+It checks if the formed sentence is correct or wrong.
+
+If chosen coreect then it displays "Right answer" otherwise Wrong answer.
+It contains 3 buttons.
+Functionality 2:
+Select language button:To select a language hindi or english.
+Functionality 3:
+Form a sentence by clicking the buttons.
+Functionality 4:
+RE-form the sentence
+Functionality 5:
+Click the correctness of the sentence.
+Functionality 6:
+Increase the number of sentences.

@@ -1,0 +1,19 @@
+body
+{
+    background-color:white;
+}
+#demo1
+{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style:bold;
+    color:blue;
+}
+#demo2
+{
+    color: blue;
+    font-style:italic;
+
+}
+#select{
+    padding: 8px 12px;
+}

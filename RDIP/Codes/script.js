@@ -77,6 +77,4 @@ function choose()
         document.getElementById("demo3").innerHTML=""
         alert ("select language")
       }
-      
-
-  }
+}

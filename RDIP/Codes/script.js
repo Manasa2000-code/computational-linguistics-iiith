@@ -24,16 +24,59 @@ var righth=["राम और श्याम गयें बाजार","श
 function choose()
   {  
       var x = document.getElementById("myselect").value;
-      if(document.getElementById("eng").selected || document.getElementById("hin").selected)
+      document.getElementById("demo3").innerHTML=""
+      count = 0;
+      if(document.getElementById("eng").selected )
       {
       document.getElementById("demo1").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words"
       document.getElementById("demo2").innerHTML="(select the buttons in proper order)"
+
+      var arre = righte[Math.floor(Math.random() * righte.length)]
+      let be = document.getElementsByTagName("P")[2];
+      E = arre.split(" ");
+      for (i=0;i < E.length;i++)
+      {
+        m = Math.floor(Math.random() * E.length)
+         arre=E[i];
+         E[i]=E[m];
+         E[m]=arre;
+      }
+         for (i=0;i<E.length;i++)
+       {
+         let button =document.createElement("button");
+         button.innerHTML=E[i]
+         be.appendChild(button)
+       }
+          }
+      
+      else if( document.getElementById("hin").selected)
+      {
+      document.getElementById("demo1").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words"
+      document.getElementById("demo2").innerHTML="(select the buttons in proper order)"
+      var arrh = righth[Math.floor(Math.random() * righth.length)]
+      let bh = document.getElementsByTagName("P")[2];
+       H = arrh.split(" ");
+      for (i=0;i<H.length;i++)
+      {
+        n = Math.floor(Math.random() * H.length)
+         arrh=H[i];
+         H[i]=H[n];
+         H[n]=arrh;
+      }
+       for (i=0;i<H.length;i++)
+       {
+         let button =document.createElement("button");
+         button.innerHTML=H[i]
+         bh.appendChild(button)
+       }
       }
       else
       {
         document.getElementById("demo1").innerHTML=""
         document.getElementById("demo2").innerHTML=""
+        document.getElementById("demo3").innerHTML=""
         alert ("select language")
       }
+      
 
   }

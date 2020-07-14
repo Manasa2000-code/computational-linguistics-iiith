@@ -8,6 +8,7 @@ var e7=["John goes to the library and studies","John studies and goes to the lib
 var e8=["John ate an apple so did she","she ate an apple so did John"]
 var e9=["the teacher returned the book after she noticed the error","the teacher noticed the error after she returned the book","after the teacher returned the book she noticed the error","after the teacher noticed the error she returned the book","she returned the book after the teacher noticed the error","she noticed the error after the teacher returned the book","after she returned the book the teacher noticed the error","after she noticed the error the teacher returned the book"]
 var e10=["I told her that I bought a book yesterday","I told her yesterday that I bought a book","yesterday I told her that I bought a book","I bought a book that I told her yesterday","I bought a book yesterday that I told her"	,"yesterday I bought a book that I told her"]
+var righte=["Mary and John went to church","John goes to the library and studies","some students like to study in the night","John ate an apple before afternoon","John went to church after eating","did he go to market","the woman who called my sister sells cosmetics","the teacher returned the book after she noticed the error","I told her that I bought a book yesterday","John ate an apple so did she"]
 
 
 
@@ -18,64 +19,21 @@ var h4=["राम खाकर सोया","खाकर राम सोय�
 var h5=["बिल्लियों को मारकर कुत्ता सो गया","मारकर बिल्लियों को कुत्ता सो गया","बिल्लियों को मारकर सो गया कुत्ता","मारकर बिल्लियों को सो गया कुत्ता","कुत्ता सो गया बिल्लियों को मारकर","कुत्ता सो गया मारकर बिल्लियों को","सो गया कुत्ता बिल्लियों को मारकर","सो गया कुत्ता मारकर बिल्लियों को"]
 var h6=["एक लाल किताब वहाँ है","एक लाल किताब है वहाँ","वहाँ है एक लाल किताब","है वहाँ एक लाल किताब"]
 var h7=["एक बड़ी सी किताब वहाँ है	","एक बड़ी सी किताब है वहाँ","बड़ी सी एक किताब वहाँ है","बड़ी सी एक किताब है वहाँ","वहाँ है एक बड़ी सी किताब","वहाँ है बड़ी सी एक किताब"," है वहाँ एक बड़ी सी किताब","है वहाँ बड़ी सी एक किताब"] 
-
+var righth=["राम और श्याम गयें बाजार","श्याम सोया और राम भी","मैंने उसे बताया कि राम सो रहा है","राम सोया खाकर","बिल्लियों को मारकर कुत्ता सो गया","एक लाल किताब वहाँ है","एक बड़ी सी किताब वहाँ है"]
 
 function choose()
   {  
       var x = document.getElementById("myselect").value;
-      document.getElementById("demo3").innerHTML=""
-      count = 0;
-      if(document.getElementById("eng").selected )
+      if(document.getElementById("eng").selected || document.getElementById("hin").selected)
       {
       document.getElementById("demo1").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words"
       document.getElementById("demo2").innerHTML="(select the buttons in proper order)"
-
-      var arre = righte[Math.floor(Math.random() * righte.length)]
-      let be = document.getElementsByTagName("P")[2];
-      E = arre.split(" ");
-      for (i=0;i < E.length;i++)
-      {
-        m = Math.floor(Math.random() * E.length)
-         arre=E[i];
-         E[i]=E[m];
-         E[m]=arre;
-      }
-         for (i=0;i<E.length;i++)
-       {
-         let button =document.createElement("button");
-         button.innerHTML=E[i]
-         be.appendChild(button)
-       }
-          }
-      
-      else if( document.getElementById("hin").selected)
-      {
-      document.getElementById("demo1").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words"
-      document.getElementById("demo2").innerHTML="(select the buttons in proper order)"
-      var arrh = righth[Math.floor(Math.random() * righth.length)]
-      let bh = document.getElementsByTagName("P")[2];
-       H = arrh.split(" ");
-      for (i=0;i<H.length;i++)
-      {
-        n = Math.floor(Math.random() * H.length)
-         arrh=H[i];
-         H[i]=H[n];
-         H[n]=arrh;
-      }
-       for (i=0;i<H.length;i++)
-       {
-         let button =document.createElement("button");
-         button.innerHTML=H[i]
-         bh.appendChild(button)
-       }
       }
       else
       {
         document.getElementById("demo1").innerHTML=""
         document.getElementById("demo2").innerHTML=""
-        document.getElementById("demo3").innerHTML=""
         alert ("select language")
       }
-      
 
   }

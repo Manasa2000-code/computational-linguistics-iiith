@@ -16,5 +16,11 @@ body
 }
 #select
 {
-    padding: 8px 12px;
+    padding: 10px 12px;
+}
+button
+{
+width:70px;
+height:20px;
+margin:5px;
 }

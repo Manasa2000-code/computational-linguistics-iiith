@@ -14,6 +14,20 @@ body
     font-style:italic;
 
 }
+#demo4
+{
+    color:blue;
+    
+    font-style:italic;
+
+}
+#demo
+{
+    color:blue;
+    
+    
+
+}
 #select
 {
     padding: 11px 13px;
@@ -24,4 +38,11 @@ button
 width:70px;
 height:20px;
 margin:5px;
+}
+
+#reset
+{
+    width:170px;
+    height:20px;
+    margin:5px;
 }

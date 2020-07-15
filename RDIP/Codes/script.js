@@ -25,12 +25,15 @@ function choose()
   {  
       var x = document.getElementById("myselect").value;
       document.getElementById("demo3").innerHTML=""
+      document.getElementById("demo4").innerHTML=""
+      document.getElementById("demo").innerHTML=""
+      document.getElementById("reset").style.visibility="hidden";
       count = 0;
       if(document.getElementById("eng").selected )
       {
       document.getElementById("demo1").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words"
       document.getElementById("demo2").innerHTML="(select the buttons in proper order)"
-
+    
       var arre = righte[Math.floor(Math.random() * righte.length)]
       let be = document.getElementsByTagName("P")[2];
       E = arre.split(" ");
@@ -46,8 +49,22 @@ function choose()
          let button =document.createElement("button");
          button.innerHTML=E[i]
          be.appendChild(button)
+         button.addEventListener ("click",function()
+         {
+             document.getElementById("demo4").innerHTML="Formed Sentences (after selecting words):"
+             document.getElementById("demo").innerHTML+=this.innerHTML +" ";
+             this.style.visibility="hidden";
+             count=count+1;
+             if(count == 1)
+             {
+                 document.getElementById("reset").style.visibility="visible";
+             }
+ 
+         });
+
        }
-          }
+       
+     }
       
       else if( document.getElementById("hin").selected)
       {
@@ -68,6 +85,18 @@ function choose()
          let button =document.createElement("button");
          button.innerHTML=H[i]
          bh.appendChild(button)
+         button.addEventListener ("click",function()
+        {
+            document.getElementById("demo4").innerHTML="Formed Sentences (after selecting words)"
+            document.getElementById("demo").innerHTML+=this.innerHTML+" ";
+            this.style.visibility="hidden";
+            count=count+1;
+            if(count == 1)
+            {
+                document.getElementById("reset").style.visibility="visible";
+            }
+
+        });
        }
       }
       else
@@ -75,6 +104,6 @@ function choose()
         document.getElementById("demo1").innerHTML=""
         document.getElementById("demo2").innerHTML=""
         document.getElementById("demo3").innerHTML=""
-        alert ("select language")
+        alert ("select a language")
       }
 }

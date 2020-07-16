@@ -47,6 +47,7 @@ function choose()
          for (i=0;i<E.length;i++)
        {
          let button =document.createElement("button");
+         button.id='button'+i;
          button.innerHTML=E[i]
          be.appendChild(button)
          button.addEventListener ("click",function()
@@ -55,7 +56,7 @@ function choose()
              document.getElementById("demo").innerHTML+=this.innerHTML +" ";
              this.style.visibility="hidden";
              count=count+1;
-             if(count == 1)
+             if(count >= 1)
              {
                  document.getElementById("reset").style.visibility="visible";
              }
@@ -83,6 +84,7 @@ function choose()
        for (i=0;i<H.length;i++)
        {
          let button =document.createElement("button");
+         button.id='button'+i;
          button.innerHTML=H[i]
          bh.appendChild(button)
          button.addEventListener ("click",function()
@@ -91,7 +93,7 @@ function choose()
             document.getElementById("demo").innerHTML+=this.innerHTML+" ";
             this.style.visibility="hidden";
             count=count+1;
-            if(count == 1)
+            if(count >= 1)
             {
                 document.getElementById("reset").style.visibility="visible";
             }
@@ -106,4 +108,38 @@ function choose()
         document.getElementById("demo3").innerHTML=""
         alert ("select a language")
       }
+}
+
+function reset()
+{   
+  if(document.getElementById("eng").selected )
+  {
+  for(i=0 ;i<E.length;i++)
+  {    
+        if(document.getElementById('button'+i).style.visibility="hidden")
+        {
+         
+    	document.getElementById('button'+ i).style.visibility="visible";
+	    document.getElementById('demo4').innerHTML=""
+	    document.getElementById('demo').innerHTML=""
+	    document.getElementById('reset').style.visibility="hidden";
+       }
+     
+  }
+  }
+ else if(document.getElementById("hin").selected )
+  {
+  for(i=0 ;i<H.length;i++)
+  {    
+        if(document.getElementById('button'+i).style.visibility="hidden")
+        {
+         
+    	document.getElementById('button'+ i).style.visibility="visible";
+	    document.getElementById('demo4').innerHTML=""
+	    document.getElementById('demo').innerHTML=""
+	    document.getElementById('reset').style.visibility="hidden";
+       }
+     
+  }
+  }
 }

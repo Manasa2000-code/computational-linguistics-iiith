@@ -28,6 +28,7 @@ function choose()
       document.getElementById("demo4").innerHTML=""
       document.getElementById("demo").innerHTML=""
       document.getElementById("reset").style.visibility="hidden";
+      document.getElementById('correctness').style.visibility="hidden";
       count = 0;
       if(document.getElementById("eng").selected )
       {
@@ -56,9 +57,15 @@ function choose()
              document.getElementById("demo").innerHTML+=this.innerHTML +" ";
              this.style.visibility="hidden";
              count=count+1;
-             if(count >= 1)
+             if(count >= 1 )
              {
                  document.getElementById("reset").style.visibility="visible";
+             }
+             var n=String(document.getElementById("demo").innerHTML).replace(/\s+$/,"");
+             n1=n.split(" ");
+             if(E.length == n1.length)
+             {
+                 document.getElementById("correctness").style.visibility="visible";
              }
  
          });
@@ -93,10 +100,18 @@ function choose()
             document.getElementById("demo").innerHTML+=this.innerHTML+" ";
             this.style.visibility="hidden";
             count=count+1;
-            if(count >= 1)
+            if(count >= 1 )
             {
                 document.getElementById("reset").style.visibility="visible";
             }
+            
+            var n=String(document.getElementById("demo").innerHTML).replace(/\s+$/,"");
+            n1=n.split(" ");
+            if(H.length == n1.length)
+            {
+                document.getElementById("correctness").style.visibility="visible";
+            }
+
 
         });
        }
@@ -122,7 +137,8 @@ function reset()
     	document.getElementById('button'+ i).style.visibility="visible";
 	    document.getElementById('demo4').innerHTML=""
 	    document.getElementById('demo').innerHTML=""
-	    document.getElementById('reset').style.visibility="hidden";
+      document.getElementById('reset').style.visibility="hidden";
+      document.getElementById('correctness').style.visibility="hidden";
        }
      
   }
@@ -137,9 +153,12 @@ function reset()
     	document.getElementById('button'+ i).style.visibility="visible";
 	    document.getElementById('demo4').innerHTML=""
 	    document.getElementById('demo').innerHTML=""
-	    document.getElementById('reset').style.visibility="hidden";
+      document.getElementById('reset').style.visibility="hidden";
+      document.getElementById('correctness').style.visibility="hidden";
        }
      
   }
   }
 }
+
+

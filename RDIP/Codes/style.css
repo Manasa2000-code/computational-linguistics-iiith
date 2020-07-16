@@ -42,7 +42,19 @@ margin:5px;
 
 #reset
 {
-    width:170px;
+    width:160px;
     height:20px;
-    margin:5px;
+    margin:10px;
+    text-align:center;
+    position:center;
+    display:flex;
+    justify-content: center;
+}
+#correctness
+{
+    width:260px;
+    height:20px;
+    margin:20px;
+    text-align-last:center;
+    position:center;
 }

@@ -198,7 +198,7 @@ document.getElementById('err').innerHTML= "<span style = 'color:green'>Right ans
 else
 {
 document.getElementById('err').innerHTML= "<span style='color:red;'>Wrong answer!!!</span>"
-
+var x = document.getElementById("sentence").style.visibility="visible"
 }
 
 }

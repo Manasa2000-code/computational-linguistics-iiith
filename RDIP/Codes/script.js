@@ -29,16 +29,18 @@ function choose()
       document.getElementById("demo").innerHTML=""
       document.getElementById("reset").style.visibility="hidden";
       document.getElementById('correctness').style.visibility="hidden";
-      count = 0;
+      document.getElementById('err').innerHTML="";
+      count = 1;
       if(document.getElementById("eng").selected )
       {
       document.getElementById("demo1").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words"
       document.getElementById("demo2").innerHTML="(select the buttons in proper order)"
-    
+      document.getElementById("err").innerHTML=""
       var arre = righte[Math.floor(Math.random() * righte.length)]
       let be = document.getElementsByTagName("P")[2];
       E = arre.split(" ");
-      for (i=0;i < E.length;i++)
+      
+    for (i=0;i < E.length;i++)
       {
         m = Math.floor(Math.random() * E.length)
          arre=E[i];
@@ -55,19 +57,23 @@ function choose()
          {
              document.getElementById("demo4").innerHTML="Formed Sentences (after selecting words):"
              document.getElementById("demo").innerHTML+=this.innerHTML +" ";
-             this.style.visibility="hidden";
+             this.style.display="none";
+            
              count=count+1;
              if(count >= 1 )
              {
                  document.getElementById("reset").style.visibility="visible";
+                
+                 
              }
              var n=String(document.getElementById("demo").innerHTML).replace(/\s+$/,"");
              n1=n.split(" ");
-             if(E.length == n1.length)
+             if(E.length === n1.length)
              {
                  document.getElementById("correctness").style.visibility="visible";
+                
              }
- 
+          
          });
 
        }
@@ -98,19 +104,24 @@ function choose()
         {
             document.getElementById("demo4").innerHTML="Formed Sentences (after selecting words)"
             document.getElementById("demo").innerHTML+=this.innerHTML+" ";
-            this.style.visibility="hidden";
-            count=count+1;
+            this.style.display="none";
+            
+            count+=1;
             if(count >= 1 )
             {
                 document.getElementById("reset").style.visibility="visible";
+               
             }
             
             var n=String(document.getElementById("demo").innerHTML).replace(/\s+$/,"");
             n1=n.split(" ");
-            if(H.length == n1.length)
+            if(H.length === n1.length)
             {
                 document.getElementById("correctness").style.visibility="visible";
+                
+               
             }
+          
 
 
         });
@@ -129,36 +140,65 @@ function reset()
 {   
   if(document.getElementById("eng").selected )
   {
-  for(i=0 ;i<E.length;i++)
+    var i = 0;
+  while(i < E.length )
   {    
-        if(document.getElementById('button'+i).style.visibility="hidden")
+        if(document.getElementById('button'+i).style.display=="none")
         {
          
-    	document.getElementById('button'+ i).style.visibility="visible";
+    	document.getElementById('button'+ i).style.display="inline";
 	    document.getElementById('demo4').innerHTML=""
 	    document.getElementById('demo').innerHTML=""
       document.getElementById('reset').style.visibility="hidden";
       document.getElementById('correctness').style.visibility="hidden";
-       }
-     
+      document.getElementById('err').innerHTML="";
+    }
+    i++; 
   }
   }
  else if(document.getElementById("hin").selected )
   {
-  for(i=0 ;i<H.length;i++)
+    var i=0;
+  while(i < H.length )
   {    
-        if(document.getElementById('button'+i).style.visibility="hidden")
+        if(document.getElementById('button'+i).style.display=="none")
         {
          
-    	document.getElementById('button'+ i).style.visibility="visible";
+    	document.getElementById('button'+ i).style.display="inline";
 	    document.getElementById('demo4').innerHTML=""
 	    document.getElementById('demo').innerHTML=""
       document.getElementById('reset').style.visibility="hidden";
       document.getElementById('correctness').style.visibility="hidden";
-       }
+      document.getElementById('err').innerHTML="";
      
+       }
+       i++;  
   }
   }
 }
+function correctness()
+{
+var a=document.getElementById("demo").innerHTML
 
+if((a ==="Mary and John went to church ")||(a==="John goes to the library and studies ")
 
+||(a=="some students like to study in the night ")||(a=="John ate an apple before afternoon ")
+||(a=="John went to church after eating ")||(a=="did he go to market ")||(a=="the woman who called my sister sells cosmetics ")
+  ||(a=="the teacher returned the book after she noticed the error ")||
+  (a=="I told her that I bought a book yesterday ")||
+  (a=="John ate an apple so did she ")||(a=="राम और श्याम गयें बाजार ")||(a=="श्याम सोया और राम भी ")
+  ||(a=="मैंने उसे बताया कि राम सो रहा है ")||(a=="राम सोया खाकर ")
+  ||(a=="बिल्लियों को मारकर कुत्ता सो गया ")||(a=="एक लाल किताब वहाँ है ")
+  ||(a=="एक बड़ी सी किताब वहाँ है "))
+
+{
+document.getElementById('err').innerHTML= "<span style = 'color:green'>Right answer!!!</span>"
+}                                 
+
+else
+{
+document.getElementById('err').innerHTML= "<span style='color:red;'>Wrong answer!!!</span>"
+
+}
+
+}

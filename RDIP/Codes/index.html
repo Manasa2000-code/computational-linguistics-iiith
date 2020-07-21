@@ -8,24 +8,27 @@
     <script src="script.js"></script>
 </head>
 <body>
+    <center><h1>Forming sentences-2</h1></center>
     <h1>Experiment</h1>
     <center>
-     <select id="myselect" onchange="choose()">
+     <select id="myselect" autocomplete="off" onchange="choose();">
     <option value="none" selected>---Select Language---</option>
     <option value="eng" id="eng">English</option>
     <option value="hin" id="hin">Hindi</option>
     </select>
-    <p id="demo1"></p>
+    <p id="demo1">
+       
+    </p>
     <p id ="demo2"></p>
     <p id ="demo3"></p>
     <p id ="demo4"></p>
-    <p id = "demo"></p>
+    <p id = "demo5"></p>
     <button id="reset" style="visibility:hidden;" onclick="reset()">Re-form the sentence</button> 
-
     <button id ="correctness"style="visibility:hidden;"onclick="correctness()">Check the correctness of the sentence</button> 
        <p id = "err"></p>  
-       <button id ="sentence"style="visibility:hidden;" onclick="toggle()">Get correct sentence</button>    
+       <button id ="sentence"style="visibility:hidden;" onclick="toggle()">Get Correct Sentence</button>    
        <p id="get"></p>
     </center>
 </body>
 </html>
+

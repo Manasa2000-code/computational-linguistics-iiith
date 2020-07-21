@@ -4,28 +4,28 @@ body
 }
 #demo1
 {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style:bold;
+    font-size:25px;
+    font-style:bolder;
     color:blue;
 }
 #demo2
-{
+{   
+    font-style:bolder;
     color: blue;
-    font-style:italic;
-
+    font-size:25px;
 }
 #demo4
 {
     color:blue;
-    
-    font-style:italic;
+    font-size:25px;
+  
 
 }
-#demo
+#demo5
 {
     color:black;
     
-    font-size: 30px;
+    font-size: 40px;
 
 }
 #select
@@ -73,7 +73,7 @@ margin:5px;
 }
 #get
 {
-    width:100px;
+    width:500px;
     height:20px;
     margin:20px;
     text-align-last:center;
